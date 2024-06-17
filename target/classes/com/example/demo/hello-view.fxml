@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.Box?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="20.0" layoutY="20.0" text="Поиск оборудования">
@@ -21,12 +20,12 @@
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="80.0" mnemonicParsing="false" text="Добавить">
+      <Button layoutX="200.0" layoutY="80.0" mnemonicParsing="false" text="Изменить">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="380.0" layoutY="80.0" mnemonicParsing="false" text="Добавить">
+      <Button layoutX="380.0" layoutY="80.0" mnemonicParsing="false" text="Удалить">
          <font>
             <Font size="28.0" />
          </font>
@@ -36,12 +35,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="1093.0" layoutY="80.0" mnemonicParsing="false" text="Добавить">
+      <Button layoutX="1093.0" layoutY="80.0" mnemonicParsing="false" text="Категории поиска">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="1274.0" layoutY="80.0" mnemonicParsing="false" text="Добавить">
+      <Button layoutX="1403.0" layoutY="80.0" mnemonicParsing="false" text="Поиск">
          <font>
             <Font size="28.0" />
          </font>
