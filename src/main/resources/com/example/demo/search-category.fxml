@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="155.0" text="Категории: ">
+            <font>
+                <Font name="Arial Bold" size="20.0" />
+            </font>
+        </Label>
+        <ChoiceBox layoutX="14.0" layoutY="89.0" prefWidth="150.0">
+            <effect>
+                <Blend />
+            </effect>
+        </ChoiceBox>
+        <ChoiceBox layoutX="169.0" layoutY="89.0" prefWidth="150.0">
+            <effect>
+                <Blend />
+            </effect>
+        </ChoiceBox>
+        <Label layoutX="14.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Продукт" textFill="#000000cb">
+            <font>
+                <Font name="Yu Gothic UI Semilight" size="14.0" />
+            </font>
+        </Label>
+        <Label contentDisplay="CENTER" layoutX="169.0" layoutY="60.0" prefHeight="27.0" prefWidth="71.0" text="Линейка" textFill="#000000cb">
+            <font>
+                <Font name="Yu Gothic UI Semilight" size="14.0" />
+            </font>
+        </Label>
+        <ChoiceBox layoutX="324.0" layoutY="89.0" prefWidth="150.0">
+            <effect>
+                <Blend />
+            </effect>
+        </ChoiceBox>
+        <Label layoutX="324.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Материал" textFill="#000000cb">
+            <font>
+                <Font name="Yu Gothic UI Semilight" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
