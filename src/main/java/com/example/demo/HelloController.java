@@ -2,9 +2,7 @@ package com.example.demo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 
 public class HelloController {
@@ -16,22 +14,19 @@ public class HelloController {
     private URL location;
 
     @FXML
-    void buttonClick(ActionEvent event) {
-        Button buttonPage = (Button) event.getSource();
-        String buttonName = buttonPage.getText();
-        if (buttonName.equals("Добавить")) {
+    private Button buttonAdd;
 
-        }
-        if (buttonName.equals("Изменить")) {
+    @FXML
+    private Button buttonCategories;
 
-        }
-        if (buttonName.equals("Отчеты")) {
+    @FXML
+    private Button buttonChange;
 
-        }
-        if (buttonName.equals("Категории поиска")) {
+    @FXML
+    private Button buttonReports;
 
-        }
-    }
+    @FXML
+    private Button buttonSearch;
 
     @FXML
     void initialize() {

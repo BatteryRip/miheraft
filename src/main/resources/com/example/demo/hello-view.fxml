@@ -15,17 +15,17 @@
             <Font name="Arial Bold" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="20.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonClick" text="Добавить">
+      <Button fx:id="buttonAdd" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" text="Добавить">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonClick" text="Изменить">
+      <Button fx:id="buttonChange" layoutX="200.0" layoutY="80.0" mnemonicParsing="false" text="Изменить">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="380.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonClick" text="Отчеты">
+      <Button fx:id="buttonReports" layoutX="380.0" layoutY="80.0" mnemonicParsing="false" text="Отчеты">
          <font>
             <Font size="28.0" />
          </font>
@@ -35,12 +35,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="1093.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonClick" text="Категории поиска">
+      <Button fx:id="buttonCategories" layoutX="1093.0" layoutY="80.0" mnemonicParsing="false" text="Категории поиска">
          <font>
             <Font size="28.0" />
          </font>
       </Button>
-      <Button layoutX="1403.0" layoutY="80.0" mnemonicParsing="false" onAction="#buttonClick" text="Поиск">
+      <Button fx:id="buttonSearch" layoutX="1403.0" layoutY="80.0" mnemonicParsing="false" text="Поиск">
          <font>
             <Font size="28.0" />
          </font>
