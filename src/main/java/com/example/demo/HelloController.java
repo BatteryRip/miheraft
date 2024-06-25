@@ -2,11 +2,15 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -49,7 +53,38 @@ public class HelloController {
     private Button buttonSearch;
 
     @FXML
+    private TextField searchField;
+
+    @FXML
+    private TableColumn<?, ?> tableCategory;
+
+    @FXML
+    private TableColumn<?, ?> tableComments;
+
+    @FXML
+    private TableColumn<?, ?> tableDescription;
+
+    @FXML
+    private TableColumn<?, ?> tableID;
+
+    @FXML
+    private TableColumn<?, ?> tableLine;
+
+    @FXML
+    private TableColumn<?, ?> tableMarketPrice;
+
+    @FXML
+    private TableColumn<?, ?> tableName;
+
+    @FXML
+    private TableColumn<?, ?> tablePurchasePrice;
+
+    @FXML
+    private TableColumn<?, ?> tableSerialNumber;
+
+    @FXML
     void initialize() {
+        DatabaseHandler dbHandler = new DatabaseHandler();
         buttonCategories.setOnAction(event -> {
             PageLoad("search-category.fxml", 488, 400, "Категории");
         });
@@ -58,6 +93,13 @@ public class HelloController {
         });
         buttonChange.setOnAction(event -> {
             PageLoad("change.fxml", 700, 425, "Изменение");
+        });
+        buttonSearch.setOnAction(event -> {
+            try {
+                dbHandler.searchQuery(searchField.getText());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 
