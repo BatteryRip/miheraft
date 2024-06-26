@@ -12,7 +12,7 @@ public class DatabaseHandler extends Configs {
                         + "password=" + dbPass + ";"
                         + "encrypt=true;"
                         + "trustServerCertificate=false;"
-                        + "loginTimeout=30;";
+                        + "loginTimeout=30;encrypt=false;";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dbConnection = DriverManager.getConnection(connectionUrl);
         return dbConnection;
@@ -20,6 +20,6 @@ public class DatabaseHandler extends Configs {
     public void searchQuery(String Name) throws SQLException, ClassNotFoundException {
         String query = "SELECT * FROM " + Equipment.NAME + ";";
         PreparedStatement ps = getConnection().prepareStatement(query);
-        ps.executeUpdate();
+        ps.executeQuery();
     }
 }
