@@ -99,6 +99,8 @@ public class HelloController {
                 dbHandler.searchQuery(searchField.getText());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         });
     }

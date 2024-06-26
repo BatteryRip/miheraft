@@ -3,7 +3,8 @@ package com.example.demo;
 import java.sql.*;
 
 public class DatabaseHandler extends Configs {
-    public void main(String[] args) {
+    Connection dbConnection;
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
         String connectionUrl =
                 "jdbc:sqlserver://" + dbHost + ":" + dbPort + ";"
                         + "database=" + dbName + ";"
@@ -12,19 +13,13 @@ public class DatabaseHandler extends Configs {
                         + "encrypt=true;"
                         + "trustServerCertificate=false;"
                         + "loginTimeout=30;";
-
-        try (Connection connection = DriverManager.getConnection(connectionUrl);) {
-            // Code here.
-        }
-        // Handle any errors that may have occurred.
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        dbConnection = DriverManager.getConnection(connectionUrl);
+        return dbConnection;
     }
-    public void searchQuery(String Name) throws SQLException {
+    public void searchQuery(String Name) throws SQLException, ClassNotFoundException {
         String query = "SELECT * FROM " + Equipment.NAME + ";";
-        PreparedStatement ps = (PreparedStatement) DriverManager.getConnection(query);
-        ps.setString(1, Name);
+        PreparedStatement ps = getConnection().prepareStatement(query);
         ps.executeUpdate();
     }
 }
