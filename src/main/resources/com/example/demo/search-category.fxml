@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="263.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SearchCategoryController">
     <children>
         <Label layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="155.0" text="Категории: ">
             <font>
                 <Font name="Arial Bold" size="20.0" />
             </font>
         </Label>
-        <ChoiceBox layoutX="14.0" layoutY="89.0" prefWidth="150.0">
-            <effect>
-                <Blend />
-            </effect>
-        </ChoiceBox>
-        <ChoiceBox layoutX="169.0" layoutY="89.0" prefWidth="150.0">
-            <effect>
-                <Blend />
-            </effect>
-        </ChoiceBox>
-        <Label layoutX="14.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Продукт" textFill="#000000cb">
+        <Label layoutX="14.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Категория" textFill="#000000cb">
             <font>
                 <Font name="Yu Gothic UI Semilight" size="14.0" />
             </font>
@@ -33,15 +23,38 @@
                 <Font name="Yu Gothic UI Semilight" size="14.0" />
             </font>
         </Label>
-        <ChoiceBox layoutX="324.0" layoutY="89.0" prefWidth="150.0">
-            <effect>
-                <Blend />
-            </effect>
-        </ChoiceBox>
-        <Label layoutX="324.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Материал" textFill="#000000cb">
+        <Label layoutX="324.0" layoutY="62.0" prefHeight="23.0" prefWidth="155.0" text="Серийный номер" textFill="#000000cb">
             <font>
                 <Font name="Yu Gothic UI Semilight" size="14.0" />
             </font>
         </Label>
+      <TextField id="serialNumberField" fx:id="serialNumberField" layoutX="325.0" layoutY="89.0" />
+      <TextField fx:id="lineField" layoutX="170.0" layoutY="89.0" />
+      <TextField fx:id="categoryField" layoutX="15.0" layoutY="89.0" />
+      <Label layoutX="14.0" layoutY="131.0" prefHeight="23.0" prefWidth="155.0" text="Рыночная цена (мин.)" textFill="#000000cb">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="169.0" layoutY="131.0" prefHeight="23.0" prefWidth="155.0" text="Рыночная цена (макс.)" textFill="#000000cb">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="minMarketField" layoutX="15.0" layoutY="157.0" />
+      <TextField fx:id="maxMarketField" layoutX="170.0" layoutY="157.0" />
+      <Label layoutX="14.0" layoutY="190.0" prefHeight="23.0" prefWidth="155.0" text="Закупочная цена (мин.)" textFill="#000000cb">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="169.0" layoutY="190.0" prefHeight="23.0" prefWidth="155.0" text="Закупочная цена (макс.)" textFill="#000000cb">
+         <font>
+            <Font name="Yu Gothic UI Semilight" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="minPurchaseField" layoutX="15.0" layoutY="216.0" />
+      <TextField fx:id="maxPurchaseField" layoutX="170.0" layoutY="216.0" />
+      <Button fx:id="save" layoutX="363.0" layoutY="216.0" mnemonicParsing="false" text="Сохранить" />
     </children>
 </AnchorPane>

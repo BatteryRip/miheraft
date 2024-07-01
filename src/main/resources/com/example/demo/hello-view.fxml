@@ -57,7 +57,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </Box>
-      <TableView layoutX="21.0" layoutY="159.0" prefHeight="900.0" prefWidth="1880.0">
+      <TableView fx:id="table" layoutX="21.0" layoutY="159.0" prefHeight="900.0" prefWidth="1880.0">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="tableCategory" prefWidth="174.0" text="Категория" />

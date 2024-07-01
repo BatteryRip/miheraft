@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -56,37 +57,40 @@ public class HelloController {
     private TextField searchField;
 
     @FXML
-    private TableColumn<?, ?> tableCategory;
+    public TableView<Equipment> table;
 
     @FXML
-    private TableColumn<?, ?> tableComments;
+    private TableColumn<Equipment, String> tableCategory;
 
     @FXML
-    private TableColumn<?, ?> tableDescription;
+    private TableColumn<Equipment, String> tableComments;
 
     @FXML
-    private TableColumn<?, ?> tableID;
+    private TableColumn<Equipment, String> tableDescription;
 
     @FXML
-    private TableColumn<?, ?> tableLine;
+    private TableColumn<Equipment, String> tableID;
 
     @FXML
-    private TableColumn<?, ?> tableMarketPrice;
+    private TableColumn<Equipment, String> tableLine;
 
     @FXML
-    private TableColumn<?, ?> tableName;
+    private TableColumn<Equipment, String> tableMarketPrice;
 
     @FXML
-    private TableColumn<?, ?> tablePurchasePrice;
+    private TableColumn<Equipment, String> tableName;
 
     @FXML
-    private TableColumn<?, ?> tableSerialNumber;
+    private TableColumn<Equipment, String> tablePurchasePrice;
+
+    @FXML
+    private TableColumn<Equipment, String> tableSerialNumber;
 
     @FXML
     void initialize() {
         DatabaseHandler dbHandler = new DatabaseHandler();
         buttonCategories.setOnAction(event -> {
-            PageLoad("search-category.fxml", 488, 400, "Категории");
+            PageLoad("search-category.fxml", 488, 263, "Категории");
         });
         buttonAdd.setOnAction(event -> {
             PageLoad("add.fxml", 700, 425, "Добавление");
