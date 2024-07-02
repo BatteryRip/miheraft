@@ -3,14 +3,7 @@ package com.example.demo;
 import java.sql.*;
 
 public class DatabaseHandler extends Configs {
-    public static String category;
-    public static String line;
-    public static String maxMarket;
-    public static String minMarket;
-    public static String maxPurchase;
-    public static String minPurchase;
-    public static String serialNumber;
-    public ResultSet res = null;
+    public static ResultSet res = null;
     Connection dbConnection;
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         String connectionUrl =
@@ -27,13 +20,13 @@ public class DatabaseHandler extends Configs {
     }
     public void searchQuery(String Name) throws SQLException, ClassNotFoundException {
         String query = "SELECT * FROM Оборудование WHERE " + Equipment.NAME + " LIKE '%" + Name +
-                "%' AND " + Equipment.CATEGORY + " LIKE '%" + category +
-                "%' AND " + Equipment.LINE + " LIKE'%" + line +
-                "%' AND " + Equipment.SERIAL_NUMBER + " LIKE'%" + serialNumber +
-                "%' AND " + Equipment.MARKET_PRICE + " > '" + minMarket +
-                "' AND " + Equipment.MARKET_PRICE + " < '" + maxMarket +
-                "' AND " + Equipment.PURCHASE_PRICE + " > '" + minPurchase +
-                "' AND " + Equipment.PURCHASE_PRICE + " < '" + maxPurchase +
+                "%' AND " + Equipment.CATEGORY + " LIKE '%" + SearchCategoryController.category +
+                "%' AND " + Equipment.LINE + " LIKE'%" + SearchCategoryController.line +
+                "%' AND " + Equipment.SERIAL_NUMBER + " LIKE'%" + SearchCategoryController.serialNumber +
+                "%' AND " + Equipment.MARKET_PRICE + " > '" + SearchCategoryController.minMarket +
+                "' AND " + Equipment.MARKET_PRICE + " < '" + SearchCategoryController.maxMarket +
+                "' AND " + Equipment.PURCHASE_PRICE + " > '" + SearchCategoryController.minPurchase +
+                "' AND " + Equipment.PURCHASE_PRICE + " < '" + SearchCategoryController.maxPurchase +
                 "';";
         PreparedStatement ps = getConnection().prepareStatement(query);
         res = ps.executeQuery();
