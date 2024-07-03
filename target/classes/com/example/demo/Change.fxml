@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="425.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="425.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ChangeController">
    <children>
       <Label layoutX="24.0" layoutY="24.0" prefHeight="30.0" prefWidth="350.0" text="Изменение свойств оборудования">
          <font>
@@ -23,47 +23,48 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="146.0" prefHeight="69.0" prefWidth="659.0" />
+      <TextField fx:id="changeDescriptionField" layoutX="24.0" layoutY="146.0" prefHeight="69.0" prefWidth="659.0" />
       <Label layoutX="24.0" layoutY="115.0" prefHeight="30.0" prefWidth="350.0" text="Описание" textFill="#000000cc">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="245.0" prefHeight="30.0" prefWidth="203.0" />
+      <TextField fx:id="changeSerialNumberField" layoutX="24.0" layoutY="245.0" prefHeight="30.0" prefWidth="203.0" />
       <Label layoutX="24.0" layoutY="215.0" prefHeight="30.0" prefWidth="350.0" text="Серийный Номер" textFill="#000000cc">
          <font>
             <Font name="Arial" size="11.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="305.0" prefHeight="30.0" prefWidth="71.0" />
+      <TextField fx:id="changeMarketField" layoutX="24.0" layoutY="305.0" prefHeight="30.0" prefWidth="71.0" />
       <Label layoutX="24.0" layoutY="275.0" prefHeight="30.0" prefWidth="350.0" text="Рыночная Цена" textFill="#000000cc">
          <font>
             <Font name="Arial" size="11.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="365.0" prefHeight="30.0" prefWidth="71.0" />
+      <TextField fx:id="changePurchaseField" layoutX="24.0" layoutY="365.0" prefHeight="30.0" prefWidth="71.0" />
       <Label layoutX="24.0" layoutY="335.0" prefHeight="30.0" prefWidth="350.0" text="Закупочная Цена" textFill="#000000cc">
          <font>
             <Font name="Arial" size="11.0" />
          </font>
       </Label>
-      <Button layoutX="586.0" layoutY="363.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Удалить">
+      <Button fx:id="deleteButton" layoutX="586.0" layoutY="363.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Удалить">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="474.0" layoutY="363.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Изменить">
+      <Button fx:id="changeButton" layoutX="474.0" layoutY="363.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Изменить">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="25.0" layoutY="90.0" />
-      <TextField layoutX="186.0" layoutY="90.0" />
+      <TextField fx:id="changeCategoryField" layoutX="25.0" layoutY="90.0" />
+      <TextField fx:id="changeLineField" layoutX="186.0" layoutY="90.0" />
       <Label layoutX="346.0" layoutY="60.0" prefHeight="30.0" prefWidth="350.0" text="Название Продукта" textFill="#000000cb">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="347.0" layoutY="90.0" />
+      <TextField fx:id="changeNameField" layoutX="347.0" layoutY="90.0" />
+      <Label fx:id="idLabel" layoutX="622.0" layoutY="31.0" text="ID:" />
    </children>
 </AnchorPane>

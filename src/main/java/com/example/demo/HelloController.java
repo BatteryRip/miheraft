@@ -21,6 +21,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class HelloController {
+    public static String selectedID;
     DatabaseHandler dbHandler = new DatabaseHandler();
     ObservableList<Equipment> list = FXCollections.observableArrayList();
     public void searchQuery(String Name) throws SQLException, ClassNotFoundException {
@@ -37,6 +38,7 @@ public class HelloController {
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
         res = ps.executeQuery();
         list.removeAll(list);
+        table.getItems().clear();
         while (res.next()){
             System.out.println(res.getString(1));
             System.out.println(res.getString(2));
@@ -80,6 +82,11 @@ public class HelloController {
         funcStage.setScene(funcScene);
         funcStage.show();
     };
+
+    public void defineSelectedID() {
+        Equipment selected = table.getSelectionModel().getSelectedItem();
+        selectedID = selected.getId();
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -145,6 +152,7 @@ public class HelloController {
             PageLoad("add.fxml", 700, 425, "Добавление");
         });
         buttonChange.setOnAction(event -> {
+            defineSelectedID();
             PageLoad("change.fxml", 700, 425, "Изменение");
         });
         buttonSearch.setOnAction(event -> {
@@ -157,5 +165,4 @@ public class HelloController {
             }
         });
     }
-
 }
