@@ -21,7 +21,7 @@ public class Equipment {
     private SimpleStringProperty description;
     private SimpleStringProperty marketPrice;
     private SimpleStringProperty purchasePrice;
-    private String comments;
+    private SimpleStringProperty comments;
 
     public Equipment(String id, String category, String line, String name, String serialNumber, String description, String marketPrice, String purchasePrice, String comments)
     {
@@ -33,9 +33,9 @@ public class Equipment {
         this.description = new SimpleStringProperty(description);
         this.marketPrice = new SimpleStringProperty(marketPrice);
         this.purchasePrice = new SimpleStringProperty(purchasePrice);
-        this.comments = comments;
+        this.comments = new SimpleStringProperty(comments);
     }
-    public String getID() {
+    public String getId() {
         return id.get();
     }
     public String getCategory() {
@@ -60,6 +60,6 @@ public class Equipment {
         return purchasePrice.get();
     }
     public String getComments() {
-        return comments;
+        return comments.get();
     }
 }

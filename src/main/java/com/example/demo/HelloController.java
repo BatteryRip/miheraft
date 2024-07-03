@@ -3,6 +3,7 @@ package com.example.demo;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -20,23 +21,38 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class HelloController {
+    DatabaseHandler dbHandler = new DatabaseHandler();
     ObservableList<Equipment> list = FXCollections.observableArrayList();
-
-    private void LoadQuery() throws SQLException {
-        while (DatabaseHandler.res.next()){
-            list.removeAll(list);
+    public void searchQuery(String Name) throws SQLException, ClassNotFoundException {
+        ResultSet res = null;
+        String query = "SELECT * FROM Оборудование WHERE " + Equipment.NAME + " LIKE '%" + Name +
+                "%' AND " + Equipment.CATEGORY + " LIKE '%" + SearchCategoryController.category +
+                "%' AND " + Equipment.LINE + " LIKE'%" + SearchCategoryController.line +
+                "%' AND " + Equipment.SERIAL_NUMBER + " LIKE'%" + SearchCategoryController.serialNumber +
+                "%' AND " + Equipment.MARKET_PRICE + " > '" + SearchCategoryController.minMarket +
+                "' AND " + Equipment.MARKET_PRICE + " < '" + SearchCategoryController.maxMarket +
+                "' AND " + Equipment.PURCHASE_PRICE + " > '" + SearchCategoryController.minPurchase +
+                "' AND " + Equipment.PURCHASE_PRICE + " < '" + SearchCategoryController.maxPurchase +
+                "';";
+        PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        res = ps.executeQuery();
+        list.removeAll(list);
+        while (res.next()){
+            System.out.println(res.getString(1));
+            System.out.println(res.getString(2));
+            System.out.println(res.getString(3));
             list.addAll(new Equipment(
-                    DatabaseHandler.res.getString(1),
-                    DatabaseHandler.res.getString(2),
-                    DatabaseHandler.res.getString(3),
-                    DatabaseHandler.res.getString(4),
-                    DatabaseHandler.res.getString(5),
-                    DatabaseHandler.res.getString(6),
-                    DatabaseHandler.res.getString(7),
-                    DatabaseHandler.res.getString(8),
-                    DatabaseHandler.res.getString(9)));
-            table.getItems().addAll(list);
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                    res.getString(5),
+                    res.getString(6),
+                    res.getString(7),
+                    res.getString(8),
+                    res.getString(9)));
         };
+        table.getItems().addAll(list);
     }
     private void InitColumns() {
         tableCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
@@ -122,7 +138,6 @@ public class HelloController {
     @FXML
     void initialize() {
         InitColumns();
-        DatabaseHandler dbHandler = new DatabaseHandler();
         buttonCategories.setOnAction(event -> {
             PageLoad("search-category.fxml", 488, 263, "Категории");
         });
@@ -134,15 +149,10 @@ public class HelloController {
         });
         buttonSearch.setOnAction(event -> {
             try {
-                dbHandler.searchQuery(searchField.getText());
+                searchQuery(searchField.getText());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                LoadQuery();
-            } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         });
