@@ -26,7 +26,6 @@ public class AddController {
     }
 
     public void addQuery() throws SQLException, ClassNotFoundException {
-        ResultSet res;
         String query = "INSERT INTO Оборудование (" + Equipment.CATEGORY +
                 "," + Equipment.LINE +
                 "," + Equipment.NAME +
@@ -44,6 +43,7 @@ public class AddController {
                 "','" + addPurchaseField.getText() +
                 "','" + nextId() +"')";
         PreparedStatement ps = dbHandler.getConnection().prepareStatement(query);
+        ps.executeUpdate();
     }
 
     @FXML

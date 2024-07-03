@@ -38,28 +38,72 @@ public class Equipment {
     public String getId() {
         return id.get();
     }
+
+    public void setId(String id) {
+        this.id.set(id);
+    }
+
     public String getCategory() {
         return category.get();
     }
+
+    public void setCategory(String category) {
+        this.category.set(category);
+    }
+
     public String getLine() {
         return line.get();
     }
+
+    public void setLine(String line) {
+        this.line.set(line);
+    }
+
     public String getName() {
         return name.get();
     }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
     public String getSerialNumber() {
         return serialNumber.get();
     }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber.set(serialNumber);
+    }
+
     public String getDescription() {
         return description.get();
     }
+
+    public void setDescription(String description) {
+        this.description.set(description);
+    }
+
     public String getMarketPrice() {
         return marketPrice.get();
     }
+
+    public void setMarketPrice(String marketPrice) {
+        this.marketPrice.set(marketPrice);
+    }
+
     public String getPurchasePrice() {
         return purchasePrice.get();
     }
+
+    public void setPurchasePrice(String purchasePrice) {
+        this.purchasePrice.set(purchasePrice);
+    }
+
     public String getComments() {
         return comments.get();
+    }
+
+    public void setComments(String comments) {
+        this.comments.set(comments);
     }
 }
